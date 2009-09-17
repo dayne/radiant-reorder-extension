@@ -1,13 +1,13 @@
 # Uncomment this if you reference any of your controllers in activate
-require_dependency 'application'
+require_dependency 'application_controller'
 
 class ReorderExtension < Radiant::Extension
-  version "0.1"
+  version "0.2.0"
   description "Allows (re)ordering of pages in the page tree."
   url "http://dev.radiantcms.org/"
   
   define_routes do |map|
-    map.with_options :controller => "admin/page" do |page|
+    map.with_options :controller => "admin/pages" do |page|
       page.page_move_lower "admin/pages/:id/move_lower", :action => "move_lower"
       page.page_move_higher "admin/pages/:id/move_higher", :action => "move_higher"
       page.page_move_to_bottom "admin/pages/:id/move_to_bottom", :action => "move_to_bottom"
